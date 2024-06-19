@@ -30,8 +30,7 @@ class CreatePersonaRequest extends FormRequest
             'cPerSexo' => 'required',
             'nPerSueldo' => 'required',
             'cPerRnd' => 'required',
-            'nPerEstado' => 'required',
-            'remember_token' => 'required',
+            'nPerEstado' => 'required'
         ];
     }
 
@@ -47,7 +46,6 @@ class CreatePersonaRequest extends FormRequest
             'nPerSueldo.required' => 'El sueldo es requerido',
             'cPerRnd.required' => 'El RND es requerido',
             'nPerEstado.required' => 'El estado es requerido',
-            'remember_token.required' => 'El token es requerido',
         ];
     }
 }
