@@ -4,10 +4,11 @@
 
 @section('content')
   <h1 class="text-center text-3xl">Personas</h1>
+  <a class="block text-center p-5 bg-sky-300 text-white font-bold" href="{{ route('persona.create') }}">Agregar Persona</a>
   <ul class="flex justify-center p-5">
     @if($personas)
       @foreach($personas as $persona)
-        <li class="border-2 border-sky-300 w-48 m-4 p-5 text-center font-bold">{{ $persona->cPerNombre }} {{$persona->cPerApellido}} <br> <p class="text-sm font-extralight">{{ $persona->nPerEdad }} años</p></li>
+        <a class="border-2 border-sky-300 w-48 m-4 p-5 text-center font-bold hover:scale-110 transition duration-300" href="{{ route('persona.show',$persona) }}">{{ $persona->cPerNombre }} {{$persona->cPerApellido}} <br> <p class="text-sm font-extralight">{{ $persona->nPerEdad }} años</p></a>
       @endforeach
   </ul>
   @else
