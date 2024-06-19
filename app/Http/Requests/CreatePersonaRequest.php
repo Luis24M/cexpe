@@ -35,7 +35,8 @@ class CreatePersonaRequest extends FormRequest
         ];
     }
 
-    public function messages(){
+    public function messages(): array
+    { 
         return [
             'cPerApellido.required' => 'El apellido es requerido',
             'cPerNombre.required' => 'El nombre es requerido',

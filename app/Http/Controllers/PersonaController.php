@@ -9,35 +9,19 @@ use App\Http\Requests\CreatePersonaRequest;
 
 class PersonaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $personas = Persona::get();
         return view('personas', compact('personas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         return view('create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(CreatePersonaRequest $request)
-    {
-        Persona::create($request->validated());
-        return redirect()->route('persona.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $nPerCodigo)
     {
         return view('show', [
@@ -45,27 +29,9 @@ class PersonaController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function store(CreatePersonaRequest $request)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Persona::create($request->validated());
+        return redirect()->route('personas.index');
     }
 }

@@ -4,7 +4,7 @@
 
 @section('content')
   <h1 class="text-center text-3xl">Personas</h1>
-  <a class="block text-center p-5 bg-sky-300 text-white font-bold" href="{{ route('persona.create') }}">Agregar Persona</a>
+  <a class="block text-center p-5 bg-sky-300 text-white font-bold" href="{{ route('personas.create') }}">Agregar Persona</a>
   <ul class="flex justify-center p-5">
     @if($personas)
       @foreach($personas as $persona)

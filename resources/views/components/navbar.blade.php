@@ -3,7 +3,7 @@
     <li class="{{ setActivo('inicio') }}"><a href="/">Inicio</a></li>
     <!-- <li class="{{ setActivo('programas') }}"><a href="programas">Programas</a></li> -->
     <!-- <li class="{{ setActivo('talleres') }}"><a href="talleres">Talleres</a></li> -->
-    <li class="{{ setActivo('persona.index') }} {{ setActivo('persona.show') }}"><a href="/personas">Personas</a></li>
+    <li class="{{ setActivo('persona.*') }} {{ setActivo('personas.*') }}"><a href="/personas">Personas</a></li>
     <!-- <li class="{{ setActivo('asesoramiento') }}"><a href="asesoramiento">Asesoramiento</a></li> -->
     <li class="{{ setActivo('contacto') }}"><a href="/contacto">contacto</a></li>
   </ul>
