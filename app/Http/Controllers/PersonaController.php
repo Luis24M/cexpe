@@ -22,16 +22,36 @@ class PersonaController extends Controller
         return view('create');
     }
 
-    public function show(string $nPerCodigo)
-    {
-        return view('show', [
-            'persona' => Persona::find($nPerCodigo),
-        ]);
-    }
-
     public function store(CreatePersonaRequest $request)
     {
         Persona::create($request->validated());
         return redirect()->route('personas.index');
     }
+
+    public function show(Persona $persona)
+    {
+        return view('show', [
+            'persona' => $persona,
+        ]);
+    }
+
+    public function edit(Persona $persona)
+    {
+        return view('edit', [
+            'persona' => $persona,
+        ]);
+    }
+
+    public function update(Persona $persona, CreatePersonaRequest $request)
+    {
+        $persona->update($request->validated());
+        return redirect()->route('persona.show', $persona);
+    }
+
+    public function destroy(Persona $persona)
+    {
+        $persona->delete();
+        return redirect()->route('personas.index');
+    }
+
 }
