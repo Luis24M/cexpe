@@ -10,3 +10,4 @@ Route::post('personas','App\Http\Controllers\PersonaController@store')->name('pe
 Route::get('personas/{persona}', 'App\Http\Controllers\PersonaController@show')->name('persona.show');
 Route::delete('personas/{persona}','App\Http\Controllers\PersonaController@destroy')->name('persona.destroy');
 Route::view('contacto','contacto')->name('contacto');
+Route::post('contacto','App\Http\Controllers\ContactoController@store');
