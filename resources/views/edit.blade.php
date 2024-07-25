@@ -4,6 +4,7 @@
 
 @section('content')
 <h2 class="text-3xl">Editar persona</h2>
+@auth
 <form action="{{ route('personas.update', $persona) }}" method="post">
     @csrf @method('PATCH')
     <label for="cPerApellido">Apellido:</label>
@@ -35,4 +36,5 @@
     <br>
     <button class="border p-2 bg-cyan-600">Actualizar</button>
 </form>
+@endauth
 @endsection

@@ -10,6 +10,11 @@ use App\Http\Requests\CreatePersonaRequest;
 class PersonaController extends Controller
 {
 
+    public function __construc(){
+        // $this->middleware('auth')->only('create','store','edit','update','destroy');
+        $this->middleware('auth')->except('index','show');
+    }
+
     public function index()
     {
         $personas = Persona::get();
@@ -25,7 +30,7 @@ class PersonaController extends Controller
     public function store(CreatePersonaRequest $request)
     {
         Persona::create($request->validated());
-        return redirect()->route('personas.index');
+        return redirect()->route('personas.index')->with('estado','El servicio se ha creado con éxito');
     }
 
     public function show(Persona $persona)
@@ -45,13 +50,13 @@ class PersonaController extends Controller
     public function update(Persona $persona, CreatePersonaRequest $request)
     {
         $persona->update($request->validated());
-        return redirect()->route('persona.show', $persona);
+        return redirect()->route('personas.show', $persona)->with('estado','El servicio se ha actualizado con éxito');
     }
 
     public function destroy(Persona $persona)
     {
         $persona->delete();
-        return redirect()->route('personas.index');
+        return redirect()->route('personas.index')->with('estado','El servicio se ha eliminado con éxito');
     }
 
 }

@@ -9,6 +9,7 @@
 <body>
   @include('components.navbar')
   <div class="m-5">
+    @include('components.sesion-estado')
     @yield('content')
   </div>
 </body>

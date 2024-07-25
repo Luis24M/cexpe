@@ -14,9 +14,11 @@
   <p><strong>RND:</strong> {{ $persona->cPerRnd }}</p>
   <p><strong>Estado:</strong> {{ $persona->nPerEstado }}</p>
 </section>
+@auth
 <a href="{{ route('personas.edit', $persona) }}" class="border p-2 bg-cyan-600">Editar</a>
-<form action="{{ route('persona.destroy',$persona) }}" method="post">
+<form action="{{ route('personas.destroy',$persona) }}" method="post">
   @csrf @method('DELETE')
   <button class="border p-2 bg-red-600">Eliminar</button>
 </form>
+@endauth
 @endsection

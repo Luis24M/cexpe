@@ -21,7 +21,8 @@ class ContactoController extends Controller
             'mensaje.required' => 'El campo mensaje es obligatorio'
         ]);
         Mail::to('t012700620@unitru.edu.pe')->send(new MensajeRecibido($mensaje));
-        return new MensajeRecibido($mensaje);
-        return "Datos validados";
+        // return new MensajeRecibido($mensaje);
+        // return "Datos validados";
+        return back()->with('estado','Recibimos tu mensaje, te responderemos en la brevedad posible');
     }
 }
